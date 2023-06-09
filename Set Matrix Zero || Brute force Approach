@@ -1,0 +1,36 @@
+class Solution 
+{
+    public void setZeroes(int[][] matrix) 
+    {
+        int m=matrix.length;
+        int n=matrix[0].length;
+        int matrix1[][]=new int[m][n];
+         for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                if(matrix[i][j] == 0)
+                {
+                    for(int k=0;k<matrix[0].length;k++)
+                    {
+                       matrix1[i][k] = -1;
+                    }
+                    for(int l=0;l<matrix.length;l++)
+                    {
+                        matrix1[l][j] = -1;
+                    }
+                }
+            }
+        }
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                if(matrix1[i][j]==-1)
+                {
+                    matrix[i][j]=0;
+                }
+            }
+        }
+    }
+}
